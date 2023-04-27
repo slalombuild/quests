@@ -32,8 +32,6 @@ Thumbs.db
 *.mov
 *.wmv
 
-.env
-
 data/datasets
 .dockerignore
 docker-compose.yml
