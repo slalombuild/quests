@@ -1,7 +1,10 @@
 const db = require("../../data/dbConfig");
 
 function findAllPotionIngredients() {
-  // SOLVE HERE
+  return db("potion_ingredients as pi")
+    .leftJoin("potions as p", "p.potion_id", "pi.potion_id")
+    .leftJoin("ingredients as i", "i.ingredient_id", "pi.ingredient_id")
+    .select("pi.*", "p.potion_name", "i.ingredient_name");
 }
 
 function findPIById(potion_ingredient_id) {

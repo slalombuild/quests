@@ -1,28 +1,29 @@
 const db = require("../../data/dbConfig");
 
 function findCustomerById(customer_id) {
-  // SOLVE HERE
+  return db("customers").where({ customer_id }).first();
 }
 
 function findAllCustomers() {
-  // SOLVE HERE
   return db("customers");
 }
 
 function findBy(param) {
-  // SOLVE HERE
+  return db("customers").where(param).first();
 }
 
 async function addCustomer(customer) {
-  // SOLVE HERE
+  const [customer_id] = await db("customers").insert(customer, "customer_id");
+  return db("customers").where({ customer_id }).first();
 }
 
 async function updateCustomer(customer_id, customer) {
-  // SOLVE HERE
+  await db("customers").where({ customer_id }).update(customer);
+  return db("customers").where({ customer_id }).first();
 }
 
 async function deleteCustomer(customer_id) {
-  // SOLVE HERE
+  await db("customers").where({ customer_id }).del();
 }
 
 module.exports = {

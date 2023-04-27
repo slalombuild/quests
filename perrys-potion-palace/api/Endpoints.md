@@ -12,67 +12,6 @@
 
 ### Customers
 
-#### Find all customers
-
-Returns all customers
-
-```http
-GET /api/customers
-```
-
-```js
-[
-  {
-    customer_id: "1",
-    cust_first_name: "walk-in",
-    cust_last_name: "walk-in",
-    cust_email: "walkin@null.com",
-  },
-  {
-    customer_id: "2",
-    cust_first_name: "Steve",
-    cust_last_name: "Harper",
-    cust_email: "steve@harper.com",
-  },
-  {
-    customer_id: "3",
-    cust_first_name: "Tina",
-    cust_last_name: "Long",
-    cust_email: "tina@long.com",
-  },
-  {
-    customer_id: "5",
-    cust_first_name: "Tom",
-    cust_last_name: "Smith",
-    cust_email: "tom@smith.com",
-  },
-  {
-    customer_id: "6",
-    cust_first_name: "Mary",
-    cust_last_name: "Allen",
-    cust_email: "mary@allen.com",
-  },
-  {
-    customer_id: "7",
-    cust_first_name: "Ethan",
-    cust_last_name: "Harris",
-    cust_email: "ethan@harris.com",
-  },
-  {
-    customer_id: "8",
-    cust_first_name: "Keith",
-    cust_last_name: "Habersberger",
-    cust_email: "keith@try.com",
-  },
-  {
-    customer_id: null,
-    cust_first_name: "Keith",
-    cust_last_name: "Habersberger",
-    cust_email: "keith@secondtry.com",
-  },
-];
-```
-
 #### Find a specific customer
 
 Returns a single customer's information
@@ -91,6 +30,45 @@ GET /api/customers/:customer_id
   cust_first_name: "Steve",
   cust_last_name: "Harper",
   cust_email: "steve@harper.com"
+}
+```
+
+#### Find all sales for a customer
+
+Returns an array of purchases a customer has made
+
+```http
+GET /api/customers/sales/:customer_id
+```
+
+| Parameter     | Type     | Description |
+| ------------- | -------- | ----------- |
+| `customer_id` | `number` | Customer id |
+
+```js
+{
+  customer_id: 5,
+  cust_first_name: "Tom",
+  cust_last_name: "Smith",
+  cust_email: "tom@smith.com",
+  sales: [
+    {
+      potion_id: 3,
+      employee_id: 1,
+      potion_name: "Love Potion",
+      retail_price: 9.99,
+      emp_first_name: "Jessica",
+      emp_last_name: "Jones"
+    },
+    {
+      potion_id: 2,
+      employee_id: 1,
+      potion_name: "Truth Serum",
+      retail_price: 10.25,
+      emp_first_name: "Jessica",
+      emp_last_name: "Jones"
+    }
+  ]
 }
 ```
 

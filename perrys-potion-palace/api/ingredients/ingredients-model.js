@@ -13,7 +13,13 @@ function findBy(param) {
 }
 
 async function findIngredientInPotions(ingredient_id) {
-  // SOLVE HERE
+  const potions = await db("potions as p")
+    .leftJoin("potion_ingredients as pi", "p.potion_id", "pi.potion_id")
+    .where("pi.ingredient_id", ingredient_id)
+    .select("p.*", "pi.potion_ingredient_id", "pi.qty_used");
+  const ingredient = await db("ingredients").where({ ingredient_id }).first();
+  ingredient.potions = potions;
+  return ingredient;
 }
 
 async function addIngredient(ingredient) {
@@ -30,7 +36,16 @@ async function updateIngredient(ingredient_id, ingredient) {
 }
 
 async function orderIngredient(ingredient_id) {
-  // SOLVE HERE
+  const { in_stock, reorder_qty } = await db("ingredients")
+    .where({
+      ingredient_id,
+    })
+    .first();
+  const new_qty = in_stock + reorder_qty;
+  await db("ingredients")
+    .where({ ingredient_id })
+    .update({ in_stock: new_qty });
+  return db("ingredients").where({ ingredient_id }).first();
 }
 
 async function deleteIngredient(ingredient_id) {
