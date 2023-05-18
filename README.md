@@ -13,3 +13,4 @@ Each session begins on the `start` branch (this repo's main branch) and solution
 ### Projects in this repo
 
 [Perry's Potion Palace](perrys-potion-palace) Learn about RESTful APIs and writing Knex queries in NodeJS.
+[Wanda's Wisdom](wandas-wisdom) Learn about TypeScript.
