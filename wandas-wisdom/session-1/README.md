@@ -1,19 +1,14 @@
-# Wanda's Wisdom
+# Wanda's Wisdom: Session 1
 
-This repository presents a simple **JavaScript** web application and demonstrates how it can be converted into **TypeScript** with some simple alterations. To facilitate some of this, the app uses **Node** and the **webpack** module under the hood.
-
-The app itself merely displays a random quote, which the user can change with the click of a button. The quotes come from _Bartlett's Familiar Quotations_ (18th edition).
-
-## Slalom Town Narrative
-
-Wanda is a resident of Slalom Town. She runs a website called Wanda's Wisdom where she shares quotes she obtained from the distant realm of Earth. Currently, her site is written in JavaScript, but she's learned that static typing could make her site easier to maintain for future developers. As a result, she needs someone to convert her site to TypeScript in order to gain those benefits.
+In this session, we look at how to convert a simple **JavaScript** web application into **TypeScript** with some basic alterations.
 
 ## Installing and Running the Repo
 
-1. Fork this repository to your own account, then clone it to your local computer
-2. Enter into the new directory, then switch to the start branch by executing this command in your CLI: `git checkout start`
-3. Install all Node modules: `npm i`
-4. Start the app: `npm run start`
+1. Make sure you have already forked the main repository to your own account and cloned it to your local computer
+2. Within the Slalom Quests directory, enter into this app's folder and the subfolder for the first session: `cd wandas-wisdom/session-1`
+3. Switch to the start branch: `git checkout start`
+4. Install all Node modules: `npm i`
+5. Start the app: `npm run start`
 
 The last command will build then serve the app by using webpack, allowing you to view it at `http://localhost:8080`. Any changes you make to the code will automatically update the running site. Any errors will be displayed in your terminal.
 
