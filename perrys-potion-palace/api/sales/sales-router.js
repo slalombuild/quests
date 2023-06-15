@@ -7,7 +7,10 @@ const {
   validateExistingEmployee,
   validateActiveEmployee,
 } = require("../employees/employees-middleware");
-const { validateExistingSale } = require("./sales-middleware");
+const {
+  validateExistingSale,
+  validateUniqueSaleId,
+} = require("./sales-middleware");
 const Sales = require("./sales-model");
 
 router.get("/", (req, res, next) => {
@@ -64,6 +67,7 @@ router.get(
 
 router.post(
   "/",
+  validateUniqueSaleId,
   validateExistingPotion,
   validateActiveEmployee,
   validateExistingCustomer,

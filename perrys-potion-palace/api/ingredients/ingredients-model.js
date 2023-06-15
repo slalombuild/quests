@@ -17,11 +17,8 @@ async function findIngredientInPotions(ingredient_id) {
 }
 
 async function addIngredient(ingredient) {
-  const [ingredient_id] = await db("ingredients").insert(
-    ingredient,
-    "ingredient_id"
-  );
-  return db("ingredients").where({ ingredient_id }).first();
+  await db("ingredients").insert(ingredient);
+  return findIngredientById(ingredient.ingredient_id);
 }
 
 async function updateIngredient(ingredient_id, ingredient) {

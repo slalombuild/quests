@@ -40,7 +40,27 @@ const validateNewIngredient = (req, res, next) => {
     });
 };
 
+const validateUniqueIngredientId = (req, res, next) => {
+  const { ingredient_id } = req.body;
+  Ingredients.findIngredientById(ingredient_id)
+    .then((i) => {
+      if (i || ingredient_id === null) {
+        res.status(404).json({
+          message: "This ingredient_id is already in use. Please try another.",
+        });
+      } else {
+        next();
+      }
+    })
+    .catch((err) => {
+      res.status(500).json({
+        message: err.message,
+      });
+    });
+};
+
 module.exports = {
   validateExistingIngredient,
   validateNewIngredient,
+  validateUniqueIngredientId,
 };

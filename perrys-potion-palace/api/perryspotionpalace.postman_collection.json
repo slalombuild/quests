@@ -1,1146 +1,952 @@
 {
-	"info": {
-		"_postman_id": "469f603f-672d-4bda-a5b1-2c79c8ad60eb",
-		"name": "Perry's Potion Palace",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-	},
-	"item": [
-		{
-			"name": "Customers",
-			"item": [
-				{
-					"name": "Get all customers",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{url}}/customers",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"customers"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get a customer",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{url}}/customers/1",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"customers",
-								"1"
-							],
-							"query": [
-								{
-									"key": "",
-									"value": "1",
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Add new customer",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"customer_id\": 8,\n  \"cust_first_name\": \"Keith\",\n  \"cust_last_name\": \"Habersberger\",\n  \"cust_email\": \"keith@try.com\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{url}}/customers/",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"customers",
-								""
-							],
-							"query": [
-								{
-									"key": "",
-									"value": "1",
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Update customer",
-					"request": {
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"cust_first_name\": \"Keith\",\n  \"cust_last_name\": \"Habersberger\",\n  \"cust_email\": \"keith@secondtry.com\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{url}}/customers/8",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"customers",
-								"8"
-							],
-							"query": [
-								{
-									"key": "",
-									"value": "1",
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Delete customer",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{url}}/employees/8",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"employees",
-								"8"
-							],
-							"query": [
-								{
-									"key": "",
-									"value": "1",
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Employees",
-			"item": [
-				{
-					"name": "Get all employees",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{url}}/employees/",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"employees",
-								""
-							],
-							"query": [
-								{
-									"key": "",
-									"value": "1",
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get an employee",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{url}}/employees/1",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"employees",
-								"1"
-							],
-							"query": [
-								{
-									"key": "",
-									"value": "1",
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Add new employee",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"employee_id\": 5,\n  \"emp_first_name\": \"Thor\",\n  \"emp_last_name\": \"Odinson\",\n  \"emp_email\": \"thor@odinson.com\",\n  \"hire_date\": \"May 2, 2011\",\n  \"address\": \"Coldingham Roat, St Abbs, Berwickshire, TD14 5PL\",\n  \"current\": true\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{url}}/employees/",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"employees",
-								""
-							],
-							"query": [
-								{
-									"key": "",
-									"value": "1",
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Update employee",
-					"request": {
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"emp_first_name\": \"Thor\",\n  \"emp_last_name\": \"Odinson\",\n  \"emp_email\": \"thor@odinson.com\",\n  \"hire_date\": \"May 2, 2011\",\n  \"address\": \"Coldingham Road, St Abbs, Berwickshire, TD14 5PL\",\n  \"current\": true\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{url}}/employees/5",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"employees",
-								"5"
-							],
-							"query": [
-								{
-									"key": "",
-									"value": "1",
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Fire employee",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{url}}/employees/5",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"employees",
-								"5"
-							],
-							"query": [
-								{
-									"key": "",
-									"value": "1",
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Ingredients",
-			"item": [
-				{
-					"name": "Get all ingredients",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{url}}/ingredients",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"ingredients"
-							],
-							"query": [
-								{
-									"key": "",
-									"value": "1",
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get an ingredient",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{url}}/ingredients/1",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"ingredients",
-								"1"
-							],
-							"query": [
-								{
-									"key": "",
-									"value": "1",
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get all potions an ingredient is used in",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{url}}/ingredients/recipes/1",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"ingredients",
-								"recipes",
-								"1"
-							],
-							"query": [
-								{
-									"key": "",
-									"value": "1",
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Add new ingredient",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"ingredient_id\": 7,\n    \"ingredient_name\": \"Wormwood\",\n    \"in_stock\": 200,\n    \"cost\": 2.58,\n    \"reorder_qty\": 200,\n    \"supplier_id\": 3\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{url}}/ingredients/",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"ingredients",
-								""
-							],
-							"query": [
-								{
-									"key": "",
-									"value": "1",
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Update ingredient",
-					"request": {
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"ingredient_name\": \"Wormwood\",\n    \"in_stock\": 200,\n    \"cost\": 3.22,\n    \"reorder_qty\": 200,\n    \"supplier_id\": 3\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{url}}/ingredients/7",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"ingredients",
-								"7"
-							],
-							"query": [
-								{
-									"key": "",
-									"value": "1",
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Reorder ingredient",
-					"request": {
-						"method": "PUT",
-						"header": [],
-						"url": {
-							"raw": "{{url}}/ingredients/order/7",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"ingredients",
-								"order",
-								"7"
-							],
-							"query": [
-								{
-									"key": "",
-									"value": "1",
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Remove ingredient from database",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{url}}/ingredients/7",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"ingredients",
-								"7"
-							],
-							"query": [
-								{
-									"key": "",
-									"value": "1",
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Potion Ingredients",
-			"item": [
-				{
-					"name": "Get all potion-ingredient relationships",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{url}}/potion-ingredients/",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"potion-ingredients",
-								""
-							],
-							"query": [
-								{
-									"key": "",
-									"value": "1",
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Add potion-ingredient relationship",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"qty_used\": 4,\n    \"potion_id\": 1,\n    \"ingredient_id\": 2\n  }",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{url}}/potion-ingredients/",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"potion-ingredients",
-								""
-							],
-							"query": [
-								{
-									"key": "",
-									"value": "1",
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Update potion-ingredient relationship",
-					"request": {
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"qty_used\": 2,\n    \"potion_id\": 1,\n    \"ingredient_id\": 4\n  }",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{url}}/potion-ingredients/9",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"potion-ingredients",
-								"9"
-							],
-							"query": [
-								{
-									"key": "",
-									"value": "1",
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Delete potion-ingredient relationship",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{url}}/potion-ingredients/9",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"potion-ingredients",
-								"9"
-							],
-							"query": [
-								{
-									"key": "",
-									"value": "1",
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Potions",
-			"item": [
-				{
-					"name": "Get all potions",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{url}}/potions",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"potions"
-							],
-							"query": [
-								{
-									"key": "",
-									"value": "1",
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get a potion",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{url}}/potions/1",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"potions",
-								"1"
-							],
-							"query": [
-								{
-									"key": "",
-									"value": "1",
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Add new potion",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"potion_id\": 4,\n    \"potion_name\": \"Sleep Draught\",\n    \"in_stock\": 1,\n    \"retail_price\": 15.95\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{url}}/potions",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"potions"
-							],
-							"query": [
-								{
-									"key": "",
-									"value": "1",
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Update potion",
-					"request": {
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"potion_name\": \"Sleep Draught\",\n    \"in_stock\": 17,\n    \"retail_price\": 19.99\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{url}}/potions/4",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"potions",
-								"4"
-							],
-							"query": [
-								{
-									"key": "",
-									"value": "1",
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Remove potion",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{url}}/potions/4",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"potions",
-								"4"
-							],
-							"query": [
-								{
-									"key": "",
-									"value": "1",
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Sales",
-			"item": [
-				{
-					"name": "Get all sales",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{url}}/sales",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"sales"
-							],
-							"query": [
-								{
-									"key": "",
-									"value": "1",
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get a sale",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{url}}/sales/1",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"sales",
-								"1"
-							],
-							"query": [
-								{
-									"key": "",
-									"value": "1",
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get all sales for a customer",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{url}}/sales/customer/1",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"sales",
-								"customer",
-								"1"
-							],
-							"query": [
-								{
-									"key": "",
-									"value": "1",
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get all sales for a potion",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{url}}/sales/potion/1",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"sales",
-								"potion",
-								"1"
-							],
-							"query": [
-								{
-									"key": "",
-									"value": "1",
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get all sales for an employee",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{url}}/sales/employee/1",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"sales",
-								"employee",
-								"1"
-							],
-							"query": [
-								{
-									"key": "",
-									"value": "1",
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Create a new sale",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"sale_id\": 5,\n    \"potion_id\": 1,\n    \"employee_id\": 4,\n    \"customer_id\": 1\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{url}}/sales/",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"sales",
-								""
-							],
-							"query": [
-								{
-									"key": "",
-									"value": "1",
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Refund sale",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"potion_id\": 1,\n    \"employee_id\": 4,\n    \"customer_id\": 1\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{url}}/sales/11",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"sales",
-								"11"
-							],
-							"query": [
-								{
-									"key": "",
-									"value": "1",
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Suppliers",
-			"item": [
-				{
-					"name": "Get all suppliers",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{url}}/suppliers",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"suppliers"
-							],
-							"query": [
-								{
-									"key": "",
-									"value": "1",
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get a supplier",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{url}}/suppliers/1",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"suppliers",
-								"1"
-							],
-							"query": [
-								{
-									"key": "",
-									"value": "1",
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get all ingredients from a supplier",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{url}}/suppliers/ingredients/1",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"suppliers",
-								"ingredients",
-								"1"
-							],
-							"query": [
-								{
-									"key": "",
-									"value": "1",
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Add new supplier",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"supplier_id\": 4,\n    \"supplier_name\": \"New Company\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{url}}/suppliers",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"suppliers"
-							],
-							"query": [
-								{
-									"key": "",
-									"value": "1",
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Update supplier",
-					"request": {
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"supplier_name\": \"Old Company\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{url}}/suppliers/4",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"suppliers",
-								"4"
-							],
-							"query": [
-								{
-									"key": "",
-									"value": "1",
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Delete supplier",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"supplier_name\": \"Old Company\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{url}}/suppliers/1",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"suppliers",
-								"1"
-							],
-							"query": [
-								{
-									"key": "",
-									"value": "1",
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		}
-	]
+  "info": {
+    "_postman_id": "4c3001ef-9975-40e5-9b84-2665de75bb87",
+    "name": "Perry's Potion Palace",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Customers",
+      "item": [
+        {
+          "name": "Get all customers",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/customers",
+              "host": ["{{url}}"],
+              "path": ["customers"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get a customer",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/customers/1",
+              "host": ["{{url}}"],
+              "path": ["customers", "1"],
+              "query": [
+                {
+                  "key": "",
+                  "value": "1",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Add new customer",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"customer_id\": 8,\n  \"cust_first_name\": \"Keith\",\n  \"cust_last_name\": \"Habersberger\",\n  \"cust_email\": \"keith@try.com\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/customers/",
+              "host": ["{{url}}"],
+              "path": ["customers", ""],
+              "query": [
+                {
+                  "key": "",
+                  "value": "1",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update customer",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"cust_first_name\": \"Keith\",\n  \"cust_last_name\": \"Habersberger\",\n  \"cust_email\": \"keith@secondtry.com\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/customers/8",
+              "host": ["{{url}}"],
+              "path": ["customers", "8"],
+              "query": [
+                {
+                  "key": "",
+                  "value": "1",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete customer",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/customers/8",
+              "host": ["{{url}}"],
+              "path": ["customers", "8"],
+              "query": [
+                {
+                  "key": "",
+                  "value": "1",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Employees",
+      "item": [
+        {
+          "name": "Get all employees",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/employees/",
+              "host": ["{{url}}"],
+              "path": ["employees", ""],
+              "query": [
+                {
+                  "key": "",
+                  "value": "1",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get an employee",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/employees/1",
+              "host": ["{{url}}"],
+              "path": ["employees", "1"],
+              "query": [
+                {
+                  "key": "",
+                  "value": "1",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Add new employee",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"employee_id\": 5,\n  \"emp_first_name\": \"Thor\",\n  \"emp_last_name\": \"Odinson\",\n  \"emp_email\": \"thor@odinson.com\",\n  \"hire_date\": \"May 2, 2011\",\n  \"address\": \"Coldingham Roat, St Abbs, Berwickshire, TD14 5PL\",\n  \"current\": true\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/employees/",
+              "host": ["{{url}}"],
+              "path": ["employees", ""],
+              "query": [
+                {
+                  "key": "",
+                  "value": "1",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update employee",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"emp_first_name\": \"Thor\",\n  \"emp_last_name\": \"Odinson\",\n  \"emp_email\": \"thor@odinson.com\",\n  \"hire_date\": \"May 2, 2011\",\n  \"address\": \"Coldingham Road, St Abbs, Berwickshire, TD14 5PL\",\n  \"current\": true\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/employees/5",
+              "host": ["{{url}}"],
+              "path": ["employees", "5"],
+              "query": [
+                {
+                  "key": "",
+                  "value": "1",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Fire employee",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/employees/5",
+              "host": ["{{url}}"],
+              "path": ["employees", "5"],
+              "query": [
+                {
+                  "key": "",
+                  "value": "1",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Ingredients",
+      "item": [
+        {
+          "name": "Get all ingredients",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/ingredients",
+              "host": ["{{url}}"],
+              "path": ["ingredients"],
+              "query": [
+                {
+                  "key": "",
+                  "value": "1",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get an ingredient",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/ingredients/1",
+              "host": ["{{url}}"],
+              "path": ["ingredients", "1"],
+              "query": [
+                {
+                  "key": "",
+                  "value": "1",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get all potions an ingredient is used in",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/ingredients/recipes/1",
+              "host": ["{{url}}"],
+              "path": ["ingredients", "recipes", "1"],
+              "query": [
+                {
+                  "key": "",
+                  "value": "1",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Add new ingredient",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"ingredient_id\": 7,\n    \"ingredient_name\": \"Wormwood\",\n    \"in_stock\": 200,\n    \"cost\": 2.58,\n    \"reorder_qty\": 200,\n    \"supplier_id\": 3\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/ingredients/",
+              "host": ["{{url}}"],
+              "path": ["ingredients", ""],
+              "query": [
+                {
+                  "key": "",
+                  "value": "1",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update ingredient",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"ingredient_name\": \"Wormwood\",\n    \"in_stock\": 200,\n    \"cost\": 3.22,\n    \"reorder_qty\": 200,\n    \"supplier_id\": 3\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/ingredients/7",
+              "host": ["{{url}}"],
+              "path": ["ingredients", "7"],
+              "query": [
+                {
+                  "key": "",
+                  "value": "1",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Reorder ingredient",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/ingredients/order/7",
+              "host": ["{{url}}"],
+              "path": ["ingredients", "order", "7"],
+              "query": [
+                {
+                  "key": "",
+                  "value": "1",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Remove ingredient from database",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/ingredients/7",
+              "host": ["{{url}}"],
+              "path": ["ingredients", "7"],
+              "query": [
+                {
+                  "key": "",
+                  "value": "1",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Potion Ingredients",
+      "item": [
+        {
+          "name": "Get all potion-ingredient relationships",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/potion-ingredients/",
+              "host": ["{{url}}"],
+              "path": ["potion-ingredients", ""],
+              "query": [
+                {
+                  "key": "",
+                  "value": "1",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Add potion-ingredient relationship",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"potion_ingredient_id\": 9,\n    \"qty_used\": 4,\n    \"potion_id\": 1,\n    \"ingredient_id\": 2\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/potion-ingredients/",
+              "host": ["{{url}}"],
+              "path": ["potion-ingredients", ""],
+              "query": [
+                {
+                  "key": "",
+                  "value": "1",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update potion-ingredient relationship",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"qty_used\": 2,\n    \"potion_id\": 1,\n    \"ingredient_id\": 4\n  }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/potion-ingredients/9",
+              "host": ["{{url}}"],
+              "path": ["potion-ingredients", "9"],
+              "query": [
+                {
+                  "key": "",
+                  "value": "1",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete potion-ingredient relationship",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/potion-ingredients/9",
+              "host": ["{{url}}"],
+              "path": ["potion-ingredients", "9"],
+              "query": [
+                {
+                  "key": "",
+                  "value": "1",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Potions",
+      "item": [
+        {
+          "name": "Get all potions",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/potions",
+              "host": ["{{url}}"],
+              "path": ["potions"],
+              "query": [
+                {
+                  "key": "",
+                  "value": "1",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get a potion",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/potions/1",
+              "host": ["{{url}}"],
+              "path": ["potions", "1"],
+              "query": [
+                {
+                  "key": "",
+                  "value": "1",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Add new potion",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"potion_id\": 4,\n    \"potion_name\": \"Sleep Draught\",\n    \"in_stock\": 1,\n    \"retail_price\": 15.95\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/potions",
+              "host": ["{{url}}"],
+              "path": ["potions"],
+              "query": [
+                {
+                  "key": "",
+                  "value": "1",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update potion",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"potion_name\": \"Sleep Draught\",\n    \"in_stock\": 17,\n    \"retail_price\": 19.99\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/potions/4",
+              "host": ["{{url}}"],
+              "path": ["potions", "4"],
+              "query": [
+                {
+                  "key": "",
+                  "value": "1",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Remove potion",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/potions/4",
+              "host": ["{{url}}"],
+              "path": ["potions", "4"],
+              "query": [
+                {
+                  "key": "",
+                  "value": "1",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Sales",
+      "item": [
+        {
+          "name": "Get all sales",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/sales",
+              "host": ["{{url}}"],
+              "path": ["sales"],
+              "query": [
+                {
+                  "key": "",
+                  "value": "1",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get a sale",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/sales/1",
+              "host": ["{{url}}"],
+              "path": ["sales", "1"],
+              "query": [
+                {
+                  "key": "",
+                  "value": "1",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get all sales for a customer",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/sales/customer/1",
+              "host": ["{{url}}"],
+              "path": ["sales", "customer", "1"],
+              "query": [
+                {
+                  "key": "",
+                  "value": "1",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get all sales for a potion",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/sales/potion/1",
+              "host": ["{{url}}"],
+              "path": ["sales", "potion", "1"],
+              "query": [
+                {
+                  "key": "",
+                  "value": "1",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get all sales for an employee",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/sales/employee/1",
+              "host": ["{{url}}"],
+              "path": ["sales", "employee", "1"],
+              "query": [
+                {
+                  "key": "",
+                  "value": "1",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create a new sale",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"sale_id\": 10,\n    \"potion_id\": 1,\n    \"employee_id\": 4,\n    \"customer_id\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/sales/",
+              "host": ["{{url}}"],
+              "path": ["sales", ""],
+              "query": [
+                {
+                  "key": "",
+                  "value": "1",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Refund sale",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"potion_id\": 1,\n    \"employee_id\": 4,\n    \"customer_id\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/sales/10",
+              "host": ["{{url}}"],
+              "path": ["sales", "10"],
+              "query": [
+                {
+                  "key": "",
+                  "value": "1",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Suppliers",
+      "item": [
+        {
+          "name": "Get all suppliers",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/suppliers",
+              "host": ["{{url}}"],
+              "path": ["suppliers"],
+              "query": [
+                {
+                  "key": "",
+                  "value": "1",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get a supplier",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/suppliers/1",
+              "host": ["{{url}}"],
+              "path": ["suppliers", "1"],
+              "query": [
+                {
+                  "key": "",
+                  "value": "1",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get all ingredients from a supplier",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/suppliers/ingredients/1",
+              "host": ["{{url}}"],
+              "path": ["suppliers", "ingredients", "1"],
+              "query": [
+                {
+                  "key": "",
+                  "value": "1",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Add new supplier",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"supplier_id\": 4,\n    \"supplier_name\": \"New Company\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/suppliers",
+              "host": ["{{url}}"],
+              "path": ["suppliers"],
+              "query": [
+                {
+                  "key": "",
+                  "value": "1",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update supplier",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"supplier_name\": \"Old Company\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/suppliers/4",
+              "host": ["{{url}}"],
+              "path": ["suppliers", "4"],
+              "query": [
+                {
+                  "key": "",
+                  "value": "1",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete supplier",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"supplier_name\": \"Old Company\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/suppliers/4",
+              "host": ["{{url}}"],
+              "path": ["suppliers", "4"],
+              "query": [
+                {
+                  "key": "",
+                  "value": "1",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
 }
