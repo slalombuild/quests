@@ -21,7 +21,91 @@ Create a neon.tech account and any project name; we recommend PerrysPotionPalace
 Once you see the project dashboard, access the `SQL Editor` tab on the left and inject this into the query builder, then press 'Run' to populate your tables.
 
 ```
-CREATE TABLE suppliers (supplier_id int, supplier_name varchar(255)); CREATE TABLE employees (employee_id int, emp_first_name varchar(255), emp_last_name varchar(255), emp_email varchar(255), hire_date varchar(255), address varchar(255), current boolean); CREATE TABLE customers (customer_id int, cust_first_name varchar(255), cust_last_name varchar(255), cust_email varchar(255)); CREATE TABLE potions (potion_id int, potion_name varchar(255), in_stock int, retail_price float); CREATE TABLE ingredients (ingredient_id int, ingredient_name varchar(255), in_stock int, cost float, reorder_qty int, supplier_id int); CREATE TABLE potion_ingredients (potion_ingredient_id int, qty_used int, ingredient_id int, potion_id int); CREATE TABLE sales (sale_id int, potion_id int, employee_id int, customer_id int); INSERT INTO suppliers (supplier_id, supplier_name) VALUES (1, 'ABC Company'); INSERT INTO suppliers (supplier_id, supplier_name) VALUES (2, 'XYZ Company'); INSERT INTO suppliers (supplier_id, supplier_name) VALUES (3, 'TLC Company'); INSERT INTO employees (employee_id, emp_first_name, emp_last_name, emp_email, hire_date, address, current) VALUES (1, 'Jessica', 'Jones', 'jjones@jessicajones.com','November 20, 2015', '485 W 46th Street, New York City, NY', true); INSERT INTO employees (employee_id, emp_first_name, emp_last_name, emp_email, hire_date, address, current) VALUES (2,'Wanda', 'Maximoff', 'scarlet_witch@avengers.com', 'April 4, 2014', '2800 Sherwood Drive, Westview, NJ', true); INSERT INTO employees (employee_id, emp_first_name, emp_last_name, emp_email, hire_date, address, current) VALUES (3,'Peter', 'Quill', 'starlord@guardiansofthegalaxy.com', 'August 1, 2014', 'The Benetar', true); INSERT INTO employees (employee_id, emp_first_name, emp_last_name, emp_email, hire_date, address, current) VALUES (4,'Peter', 'Parker', 'spiderman@earth616.com', 'May 16, 2016', '20 Ingram Street, Forest Hills, Queens, New York City, NY', true); INSERT INTO customers (customer_id, cust_first_name, cust_last_name, cust_email) VALUES(1, 'walk-in','walk-in','walkin@null.com'); INSERT INTO customers (customer_id, cust_first_name, cust_last_name, cust_email) VALUES(2, 'Steve','Harper','steve@harper.com'); INSERT INTO customers (customer_id, cust_first_name, cust_last_name, cust_email) VALUES(3, 'Tina','Long','tina@long.com'); INSERT INTO customers (customer_id, cust_first_name, cust_last_name, cust_email) VALUES(4, 'Abbey','Johnson','abbey@johnson.com'); INSERT INTO customers (customer_id, cust_first_name, cust_last_name, cust_email) VALUES(5, 'Tom','Smith','tom@smith.com'); INSERT INTO customers (customer_id, cust_first_name, cust_last_name, cust_email) VALUES(6, 'Mary','Allen','mary@allen.com'); INSERT INTO customers (customer_id, cust_first_name, cust_last_name, cust_email) VALUES(7,'Ethan', 'Harris','ethan@harris.com'); INSERT INTO potions (potion_id, potion_name, in_stock, retail_price) VALUES(1,'Polyjuice Potion',10,11.25); INSERT INTO potions (potion_id, potion_name, in_stock, retail_price) VALUES(2,'Truth Serum',15,10.25); INSERT INTO potions (potion_id, potion_name, in_stock, retail_price) VALUES(3,'Love Potion',8,9.99); INSERT INTO ingredients (ingredient_id, ingredient_name, in_stock, cost, reorder_qty, supplier_id) VALUES( 1, 'Gillyweed', 6000, 3.75, 1000, 2); INSERT INTO ingredients (ingredient_id, ingredient_name, in_stock, cost, reorder_qty, supplier_id) VALUES( 2, 'Bat Wing', 800, 2.5, 800, 1); INSERT INTO ingredients (ingredient_id, ingredient_name, in_stock, cost, reorder_qty, supplier_id) VALUES( 3, 'Unicorn Hair', 15000, 3.25, 2000, 2); INSERT INTO ingredients (ingredient_id, ingredient_name, in_stock, cost, reorder_qty, supplier_id) VALUES( 4, 'Lacewing Fly', 2000, 1.8, 800, 1); INSERT INTO ingredients (ingredient_id, ingredient_name, in_stock, cost, reorder_qty, supplier_id) VALUES( 5, 'Mandrake Root', 650, 2.25, 500, 1); INSERT INTO ingredients (ingredient_id, ingredient_name, in_stock, cost, reorder_qty, supplier_id) VALUES( 6, 'Jar', 50, 0.75, 25, 3); INSERT INTO potion_ingredients (potion_ingredient_id, qty_used, potion_id, ingredient_id) VALUES(1, 2, 1, 1); INSERT INTO potion_ingredients (potion_ingredient_id, qty_used, potion_id, ingredient_id) VALUES(2, 1, 1, 3); INSERT INTO potion_ingredients (potion_ingredient_id, qty_used, potion_id, ingredient_id) VALUES(3, 4, 1, 5); INSERT INTO potion_ingredients (potion_ingredient_id, qty_used, potion_id, ingredient_id) VALUES(4, 1, 1, 6); INSERT INTO potion_ingredients (potion_ingredient_id, qty_used, potion_id, ingredient_id) VALUES(5, 3, 2, 1); INSERT INTO potion_ingredients (potion_ingredient_id, qty_used, potion_id, ingredient_id) VALUES(6, 1, 2, 2); INSERT INTO potion_ingredients (potion_ingredient_id, qty_used, potion_id, ingredient_id) VALUES(7, 2, 2, 3); INSERT INTO potion_ingredients (potion_ingredient_id, qty_used, potion_id, ingredient_id) VALUES(8, 1, 2, 6); INSERT INTO sales (sale_id, potion_id, employee_id, customer_id) VALUES(1, 1, 1, 1); INSERT INTO sales (sale_id, potion_id, employee_id, customer_id) VALUES(2, 2, 4, 1); INSERT INTO sales (sale_id, potion_id, employee_id, customer_id) VALUES(3, 1, 2, 4); INSERT INTO sales (sale_id, potion_id, employee_id, customer_id) VALUES(4, 3, 3, 3); INSERT INTO sales (sale_id, potion_id, employee_id, customer_id) VALUES(5, 3, 3, 2); INSERT INTO sales (sale_id, potion_id, employee_id, customer_id) VALUES(6, 3, 1, 5); INSERT INTO sales (sale_id, potion_id, employee_id, customer_id) VALUES(7, 2, 1, 5); INSERT INTO sales (sale_id, potion_id, employee_id, customer_id) VALUES(8, 1, 2, 6); INSERT INTO sales (sale_id, potion_id, employee_id, customer_id) VALUES(9, 1, 4, 7);
+CREATE TABLE suppliers (
+  supplier_id int PRIMARY KEY,
+  supplier_name varchar(255) NOT NULL
+);
+CREATE TABLE employees (
+  employee_id int PRIMARY KEY,
+  emp_first_name varchar(255) NOT NULL,
+  emp_last_name varchar(255) NOT NULL,
+  emp_email varchar(255) NOT NULL,
+  hire_date varchar(255) NOT NULL,
+  address varchar(255) NOT NULL,
+  current boolean NOT NULL
+);
+CREATE TABLE customers (
+  customer_id int PRIMARY KEY,
+  cust_first_name varchar(255) NOT NULL,
+  cust_last_name varchar(255) NOT NULL,
+  cust_email varchar(255) NOT NULL
+);
+CREATE TABLE potions (
+  potion_id int PRIMARY KEY,
+  potion_name varchar(255) NOT NULL,
+  in_stock int NOT NULL,
+  retail_price float NOT NULL
+);
+CREATE TABLE ingredients (
+  ingredient_id int PRIMARY KEY,
+  ingredient_name varchar(255) NOT NULL,
+  in_stock int NOT NULL,
+  cost float NOT NULL,
+  reorder_qty int NOT NULL,
+  supplier_id int NOT NULL
+);
+CREATE TABLE potion_ingredients (
+  potion_ingredient_id int PRIMARY KEY,
+  qty_used int NOT NULL,
+  ingredient_id int NOT NULL,
+  potion_id int NOT NULL
+);
+CREATE TABLE sales (
+  sale_id int PRIMARY KEY,
+  potion_id int NOT NULL,
+  employee_id int NOT NULL,
+  customer_id int NOT NULL
+);
+INSERT INTO suppliers (supplier_id, supplier_name) VALUES (1, 'ABC Company');
+INSERT INTO suppliers (supplier_id, supplier_name) VALUES (2, 'XYZ Company');
+INSERT INTO suppliers (supplier_id, supplier_name) VALUES (3, 'TLC Company');
+INSERT INTO employees (employee_id, emp_first_name, emp_last_name, emp_email, hire_date, address, current) VALUES (1, 'Jessica', 'Jones', 'jjones@jessicajones.com','November 20, 2015', '485 W 46th Street, New York City, NY', true);
+INSERT INTO employees (employee_id, emp_first_name, emp_last_name, emp_email, hire_date, address, current) VALUES (2,'Wanda', 'Maximoff', 'scarlet_witch@avengers.com', 'April 4, 2014', '2800 Sherwood Drive, Westview, NJ', true);
+INSERT INTO employees (employee_id, emp_first_name, emp_last_name, emp_email, hire_date, address, current) VALUES (3,'Peter', 'Quill', 'starlord@guardiansofthegalaxy.com', 'August 1, 2014', 'The Benetar', true);
+INSERT INTO employees (employee_id, emp_first_name, emp_last_name, emp_email, hire_date, address, current) VALUES (4,'Peter', 'Parker', 'spiderman@earth616.com', 'May 16, 2016', '20 Ingram Street, Forest Hills, Queens, New York City, NY', true);
+INSERT INTO customers (customer_id, cust_first_name, cust_last_name, cust_email) VALUES(1, 'walk-in','walk-in','walkin@null.com');
+INSERT INTO customers (customer_id, cust_first_name, cust_last_name, cust_email) VALUES(2, 'Steve','Harper','steve@harper.com');
+INSERT INTO customers (customer_id, cust_first_name, cust_last_name, cust_email) VALUES(3, 'Tina','Long','tina@long.com');
+INSERT INTO customers (customer_id, cust_first_name, cust_last_name, cust_email) VALUES(4, 'Abbey','Johnson','abbey@johnson.com');
+INSERT INTO customers (customer_id, cust_first_name, cust_last_name, cust_email) VALUES(5, 'Tom','Smith','tom@smith.com');
+INSERT INTO customers (customer_id, cust_first_name, cust_last_name, cust_email) VALUES(6, 'Mary','Allen','mary@allen.com');
+INSERT INTO customers (customer_id, cust_first_name, cust_last_name, cust_email) VALUES(7,'Ethan', 'Harris','ethan@harris.com');
+INSERT INTO potions (potion_id, potion_name, in_stock, retail_price) VALUES(1,'Polyjuice Potion',10,11.25);
+INSERT INTO potions (potion_id, potion_name, in_stock, retail_price) VALUES(2,'Truth Serum',15,10.25);
+INSERT INTO potions (potion_id, potion_name, in_stock, retail_price) VALUES(3,'Love Potion',8,9.99);
+INSERT INTO ingredients (ingredient_id, ingredient_name, in_stock, cost, reorder_qty, supplier_id) VALUES( 1, 'Gillyweed', 6000, 3.75, 1000, 2);
+INSERT INTO ingredients (ingredient_id, ingredient_name, in_stock, cost, reorder_qty, supplier_id) VALUES( 2, 'Bat Wing', 800, 2.5, 800, 1);
+INSERT INTO ingredients (ingredient_id, ingredient_name, in_stock, cost, reorder_qty, supplier_id) VALUES( 3, 'Unicorn Hair', 15000, 3.25, 2000, 2);
+INSERT INTO ingredients (ingredient_id, ingredient_name, in_stock, cost, reorder_qty, supplier_id) VALUES( 4, 'Lacewing Fly', 2000, 1.8, 800, 1);
+INSERT INTO ingredients (ingredient_id, ingredient_name, in_stock, cost, reorder_qty, supplier_id) VALUES( 5, 'Mandrake Root', 650, 2.25, 500, 1);
+INSERT INTO ingredients (ingredient_id, ingredient_name, in_stock, cost, reorder_qty, supplier_id) VALUES( 6, 'Jar', 50, 0.75, 25, 3);
+INSERT INTO potion_ingredients (potion_ingredient_id, qty_used, potion_id, ingredient_id) VALUES(1, 2, 1, 1);
+INSERT INTO potion_ingredients (potion_ingredient_id, qty_used, potion_id, ingredient_id) VALUES(2, 1, 1, 3);
+INSERT INTO potion_ingredients (potion_ingredient_id, qty_used, potion_id, ingredient_id) VALUES(3, 4, 1, 5);
+INSERT INTO potion_ingredients (potion_ingredient_id, qty_used, potion_id, ingredient_id) VALUES(4, 1, 1, 6);
+INSERT INTO potion_ingredients (potion_ingredient_id, qty_used, potion_id, ingredient_id) VALUES(5, 3, 2, 1);
+INSERT INTO potion_ingredients (potion_ingredient_id, qty_used, potion_id, ingredient_id) VALUES(6, 1, 2, 2);
+INSERT INTO potion_ingredients (potion_ingredient_id, qty_used, potion_id, ingredient_id) VALUES(7, 2, 2, 3);
+INSERT INTO potion_ingredients (potion_ingredient_id, qty_used, potion_id, ingredient_id) VALUES(8, 1, 2, 6);
+INSERT INTO sales (sale_id, potion_id, employee_id, customer_id) VALUES(1, 1, 1, 1);
+INSERT INTO sales (sale_id, potion_id, employee_id, customer_id) VALUES(2, 2, 4, 1);
+INSERT INTO sales (sale_id, potion_id, employee_id, customer_id) VALUES(3, 1, 2, 4);
+INSERT INTO sales (sale_id, potion_id, employee_id, customer_id) VALUES(4, 3, 3, 3);
+INSERT INTO sales (sale_id, potion_id, employee_id, customer_id) VALUES(5, 3, 3, 2);
+INSERT INTO sales (sale_id, potion_id, employee_id, customer_id) VALUES(6, 3, 1, 5);
+INSERT INTO sales (sale_id, potion_id, employee_id, customer_id) VALUES(7, 2, 1, 5);
+INSERT INTO sales (sale_id, potion_id, employee_id, customer_id) VALUES(8, 1, 2, 6);
+INSERT INTO sales (sale_id, potion_id, employee_id, customer_id) VALUES(9, 1, 4, 7);
 ```
 
 In the `.env` file, change the `PGUSER`, `PGPASSWORD`, `PGHOST`, and `PGDATABASE` fields to match the information you find in your neon.tech database's `Dashboard` tab in the card labeled "Connection Details". The .env file has an example layout for you to use.
