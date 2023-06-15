@@ -31,12 +31,9 @@ function findBy(param) {
   return db("suppliers").where(param).first();
 }
 
-async function addSupplier(supplier_name) {
-  const [supplier_id] = await db("suppliers").insert(
-    { supplier_name },
-    "supplier_id"
-  );
-  return db("suppliers").where({ supplier_id }).first();
+async function addSupplier(supplier) {
+  await db("suppliers").insert(supplier);
+  return findSupplierById(supplier.supplier_id);
 }
 
 async function updateSupplierName(supplier_id, supplier_name) {
