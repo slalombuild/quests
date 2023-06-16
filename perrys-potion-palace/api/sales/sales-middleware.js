@@ -38,7 +38,27 @@ const validateNoSales = (req, res, next) => {
     });
 };
 
+const validateUniqueSaleId = (req, res, next) => {
+  const { sale_id } = req.body;
+  Sales.findSaleById(sale_id)
+    .then((s) => {
+      if (s || sale_id === null) {
+        res.status(404).json({
+          message: "This sale_id is already in use. Please try another.",
+        });
+      } else {
+        next();
+      }
+    })
+    .catch((err) => {
+      res.status(500).json({
+        message: err.message,
+      });
+    });
+};
+
 module.exports = {
   validateExistingSale,
   validateNoSales,
+  validateUniqueSaleId,
 };

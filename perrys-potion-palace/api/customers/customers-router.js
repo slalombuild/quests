@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const {
   validateExistingCustomer,
+  validateUniqueCustomerId,
   validateNewCustomer,
 } = require("./customers-middleware");
 const Customers = require("./customers-model");
@@ -22,14 +23,19 @@ router.get("/:customer_id", validateExistingCustomer, (req, res, next) => {
     .catch(next);
 });
 
-router.post("/", validateNewCustomer, (req, res, next) => {
-  const newCustomer = req.body;
-  Customers.addCustomer(newCustomer)
-    .then((c) => {
-      res.status(201).json(c);
-    })
-    .catch(next);
-});
+router.post(
+  "/",
+  validateUniqueCustomerId,
+  validateNewCustomer,
+  (req, res, next) => {
+    const newCustomer = req.body;
+    Customers.addCustomer(newCustomer)
+      .then((c) => {
+        res.status(201).json(c);
+      })
+      .catch(next);
+  }
+);
 
 router.put("/:customer_id", validateExistingCustomer, (req, res, next) => {
   const { customer_id } = req.params;

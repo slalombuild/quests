@@ -2,6 +2,7 @@ const router = require("express").Router();
 const {
   validateExistingIngredient,
   validateNewIngredient,
+  validateUniqueIngredientId,
 } = require("./ingredients-middleware");
 const {
   validateIngredientInUse,
@@ -38,14 +39,19 @@ router.get(
   }
 );
 
-router.post("/", validateNewIngredient, (req, res, next) => {
-  const newIngredient = req.body;
-  Ingredients.addIngredient(newIngredient)
-    .then((i) => {
-      res.json(i);
-    })
-    .catch(next);
-});
+router.post(
+  "/",
+  validateUniqueIngredientId,
+  validateNewIngredient,
+  (req, res, next) => {
+    const newIngredient = req.body;
+    Ingredients.addIngredient(newIngredient)
+      .then((i) => {
+        res.json(i);
+      })
+      .catch(next);
+  }
+);
 
 router.put("/:ingredient_id", validateExistingIngredient, (req, res, next) => {
   const { ingredient_id } = req.params;

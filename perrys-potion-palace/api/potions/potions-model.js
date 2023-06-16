@@ -13,8 +13,8 @@ function findBy(param) {
 }
 
 async function addPotion(potion_info) {
-  const [potion_id] = await db("potions").insert(potion_info, "potion_id");
-  return db("potions").where({ potion_id }).first();
+  await db("potions").insert(potion_info);
+  return findPotionById(potion_info.potion_id);
 }
 
 async function updatePotion(potion_id, potion_info) {

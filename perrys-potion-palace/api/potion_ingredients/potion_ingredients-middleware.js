@@ -58,8 +58,29 @@ const validateIngredientInUse = (req, res, next) => {
     });
 };
 
+const validateUniquePotionIngredientId = (req, res, next) => {
+  const { potion_ingredient_id } = req.body;
+  PotionIngredients.findPIById(potion_ingredient_id)
+    .then((p) => {
+      if (p || potion_ingredient_id === null) {
+        res.status(404).json({
+          message:
+            "This potion_ingredient_id is already in use. Please try another.",
+        });
+      } else {
+        next();
+      }
+    })
+    .catch((err) => {
+      res.status(500).json({
+        message: err.message,
+      });
+    });
+};
+
 module.exports = {
   validateExistingPotionIngredient,
   validateNewPotionIngredient,
   validateIngredientInUse,
+  validateUniquePotionIngredientId,
 };

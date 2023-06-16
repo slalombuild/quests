@@ -3,6 +3,7 @@ const {
   validateExistingSupplier,
   validateNewSupplier,
   validateNoSupplies,
+  validateUniqueSuppliersId,
 } = require("./suppliers-middleware");
 const Suppliers = require("./suppliers-model");
 
@@ -36,14 +37,19 @@ router.get(
   }
 );
 
-router.post("/", validateNewSupplier, (req, res, next) => {
-  const { supplier_name } = req.body;
-  Suppliers.addSupplier(supplier_name)
-    .then((s) => {
-      res.json(s);
-    })
-    .catch(next);
-});
+router.post(
+  "/",
+  validateUniqueSuppliersId,
+  validateNewSupplier,
+  (req, res, next) => {
+    const supplier = req.body;
+    Suppliers.addSupplier(supplier)
+      .then((s) => {
+        res.json(s);
+      })
+      .catch(next);
+  }
+);
 
 router.put(
   "/:supplier_id",
