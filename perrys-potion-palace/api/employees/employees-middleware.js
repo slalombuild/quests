@@ -59,8 +59,28 @@ const validateNewEmployee = (req, res, next) => {
     });
 };
 
+const validateUniqueEmployeeId = (req, res, next) => {
+  const { employee_id } = req.body;
+  Employees.findEmployeeById(employee_id)
+    .then((e) => {
+      if (e || employee_id === null) {
+        res.status(404).json({
+          message: "This employee_id is already in use, please try another.",
+        });
+      } else {
+        next();
+      }
+    })
+    .catch((err) => {
+      res.status(500).json({
+        message: err.message,
+      });
+    });
+};
+
 module.exports = {
   validateActiveEmployee,
   validateExistingEmployee,
   validateNewEmployee,
+  validateUniqueEmployeeId,
 };

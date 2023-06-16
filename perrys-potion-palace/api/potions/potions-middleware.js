@@ -40,7 +40,27 @@ const validateNewPotion = (req, res, next) => {
     });
 };
 
+const validateUniquePotionId = (req, res, next) => {
+  const { potion_id } = req.body;
+  Potions.findPotionById(potion_id)
+    .then((p) => {
+      if (p || potion_id === null) {
+        res.status(404).json({
+          message: "This potion_id is already in use. Please try another.",
+        });
+      } else {
+        next();
+      }
+    })
+    .catch((err) => {
+      res.status(500).json({
+        message: err.message,
+      });
+    });
+};
+
 module.exports = {
   validateExistingPotion,
   validateNewPotion,
+  validateUniquePotionId,
 };

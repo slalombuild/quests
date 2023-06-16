@@ -13,8 +13,8 @@ function findBy(param) {
 }
 
 async function addEmployee(employee) {
-  const [employee_id] = await db("employees").insert(employee, "employee_id");
-  return db("employees").where({ employee_id }).first();
+  await db("employees").insert(employee);
+  return findEmployeeById(employee.employee_id);
 }
 
 async function editEmployee(employee_id, employee) {

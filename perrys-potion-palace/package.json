@@ -1,7 +1,7 @@
 {
   "name": "perrys-potion-palace",
   "version": "1.0.0",
-  "description": "meetup problem",
+  "description": "Knex API for Perry's Potion Palace database.",
   "main": "server.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,23 +10,11 @@
     "rollback": "knex migrate:rollback",
     "seed": "knex seed:run",
     "reup": "knex migrate:down && knex migrate:up && knex seed:run",
-    "start": "node server.js",
-    "heroku-migrate": "heroku run knex migrate:latest -a perrys-potion-palace",
-    "heroku-rollback": "heroku run knex migrate:rollback -a perrys-potion-palace",
-    "heroku-database": "heroku pg:psql -a perrys-potion-palace",
-    "heroku-seed-database": "heroku run knex seed:run -a perrys-potion-palace",
-    "deploy": "git push heroku master"
+    "start": "node server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://barryae@bitbucket.org/alex-rogers/perrys-potion-palace.git"
-  },
-  "author": "",
+  "repository": "https://github.com/slalombuild/quests/perrys-potion-palace.git",
+  "author": "Connie Reynolds",
   "license": "ISC",
-  "bugs": {
-    "url": "https://bitbucket.org/alex-rogers/perrys-potion-palace/issues"
-  },
-  "homepage": "https://bitbucket.org/alex-rogers/perrys-potion-palace#readme",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",

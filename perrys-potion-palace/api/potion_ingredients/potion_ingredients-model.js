@@ -16,11 +16,8 @@ function findBy(param) {
 }
 
 async function addIngredientToPotion(potion_ingredient) {
-  const [potion_ingredient_id] = await db("potion_ingredients").insert(
-    potion_ingredient,
-    "potion_ingredient_id"
-  );
-  return db("potion_ingredients").where({ potion_ingredient_id }).first();
+  await db("potion_ingredients").insert(potion_ingredient);
+  return findPIById(potion_ingredient.potion_ingredient_id);
 }
 
 async function updateIngredientInPotion(

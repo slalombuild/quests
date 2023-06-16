@@ -2,6 +2,7 @@ const router = require("express").Router();
 const {
   validateExistingPotion,
   validateNewPotion,
+  validateUniquePotionId,
 } = require("./potions-middleware");
 const { validateNoSales } = require("../sales/sales-middleware");
 const Potions = require("./potions-model");
@@ -23,14 +24,19 @@ router.get("/:potion_id", validateExistingPotion, (req, res, next) => {
     .catch(next);
 });
 
-router.post("/", validateNewPotion, (req, res, next) => {
-  const potion_info = req.body;
-  Potions.addPotion(potion_info)
-    .then((p) => {
-      res.status(201).json(p);
-    })
-    .catch(next);
-});
+router.post(
+  "/",
+  validateUniquePotionId,
+  validateNewPotion,
+  (req, res, next) => {
+    const potion_info = req.body;
+    Potions.addPotion(potion_info)
+      .then((p) => {
+        res.status(201).json(p);
+      })
+      .catch(next);
+  }
+);
 
 router.put("/:potion_id", validateExistingPotion, (req, res, next) => {
   const { potion_id } = req.params;

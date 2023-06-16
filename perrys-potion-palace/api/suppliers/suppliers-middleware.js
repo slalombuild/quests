@@ -58,8 +58,28 @@ const validateNoSupplies = (req, res, next) => {
     });
 };
 
+const validateUniqueSuppliersId = (req, res, next) => {
+  const { supplier_id } = req.body;
+  Suppliers.findSupplierById(supplier_id)
+    .then((s) => {
+      if (s || supplier_id === null) {
+        res.status(404).json({
+          message: "This supplier_id is already in use. Please try another.",
+        });
+      } else {
+        next();
+      }
+    })
+    .catch((err) => {
+      res.status(500).json({
+        message: err.message,
+      });
+    });
+};
+
 module.exports = {
   validateExistingSupplier,
   validateNewSupplier,
   validateNoSupplies,
+  validateUniqueSuppliersId,
 };
