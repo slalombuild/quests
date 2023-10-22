@@ -6,7 +6,7 @@ import createForm from './generators/createForm'
 import displayRandomQuote from './mutators/displayRandomQuote'
 
 const heading: HTMLElement = createHeading()
-const button: HTMLElement = createButton('Get Quote')
+const button: HTMLElement = createButton('Get Quote', displayRandomQuote)
 const section: HTMLElement = createQuoteSection()
 const description: HTMLElement = createDescription()
 const form: HTMLElement = createForm()

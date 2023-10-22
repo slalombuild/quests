@@ -6,4 +6,8 @@ interface VoidFunction {
     (...inputs: any): void
 }
 
-export type { StringFunction, VoidFunction }
+interface MouseEventHandler {
+    (event: MouseEvent): void
+}
+
+export type { StringFunction, VoidFunction, MouseEventHandler }

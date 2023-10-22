@@ -1,9 +1,12 @@
-import displayRandomQuote from '../mutators/displayRandomQuote'
+import { MouseEventHandler } from '../interfaces'
 
-function createButton(text: string): HTMLElement {
+function createButton(
+    text: string,
+    eventHandler: MouseEventHandler
+): HTMLElement {
     const button: HTMLElement = document.createElement('button')
     button.innerText = text
-    button.addEventListener('click', displayRandomQuote)
+    button.addEventListener('click', eventHandler)
 
     return button
 }
