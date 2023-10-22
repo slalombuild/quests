@@ -4,12 +4,12 @@ import createQuoteSection from './generators/createQuoteSection'
 import createDescription from './generators/createDescription'
 import displayRandomQuote from './mutators/displayRandomQuote'
 
-const heading = createHeading()
-const button = createButton()
-const section = createQuoteSection()
-const description = createDescription()
+const heading: HTMLElement = createHeading()
+const button: HTMLElement = createButton()
+const section: HTMLElement = createQuoteSection()
+const description: HTMLElement = createDescription()
 
-const body = document.querySelector('body')
+const body: HTMLElement = document.querySelector('body') as HTMLElement
 
 body.appendChild(heading)
 body.appendChild(button)

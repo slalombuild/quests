@@ -1,4 +1,6 @@
-const quotes = [
+import { Quote } from '../types'
+
+const quotes: Quote[] = [
     {
         text: `Hope springs eternal in the human breast:\nMan never is, but always to be blest.`,
         author: 'Alexander Pope',
