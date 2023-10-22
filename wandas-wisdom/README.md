@@ -4,7 +4,12 @@ This repository presents a simple **JavaScript** web application and demonstrate
 
 The app itself merely displays a random quote, which the user can change with the click of a button. The quotes come from _Bartlett's Familiar Quotations_ (18th edition).
 
-We will go through the transformations and upgrades to the app over the course of three sessions. The code necessary for each session is stored in its own subfolder. Go to the [session-1](session-1) folder to see the code for the first session.
+## Sessions
+
+We will go through the transformations and upgrades to the app over the course of three sessions. The code necessary for each session is stored in its own subfolder.
+
+- [session-1](session-1): basic types
+- [session-2](session-2): advanced features
 
 ## Slalom Town Narrative
 
@@ -24,15 +29,15 @@ The last command will build then serve the app by using webpack, allowing you to
 ## Resources
 
 - [TypeScript Documentation](https://www.typescriptlang.org/docs/)
-    - [Common Types](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html)
-    - [Object Types](https://www.typescriptlang.org/docs/handbook/2/objects.html)
-    - [Function Types](https://www.typescriptlang.org/docs/handbook/2/functions.html)
-    - [DOM Types](https://www.typescriptlang.org/docs/handbook/dom-manipulation.html)
-    - [CLI Options](https://www.typescriptlang.org/docs/handbook/compiler-options.html#handbook-content)
+  - [Common Types](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html)
+  - [Object Types](https://www.typescriptlang.org/docs/handbook/2/objects.html)
+  - [Function Types](https://www.typescriptlang.org/docs/handbook/2/functions.html)
+  - [DOM Types](https://www.typescriptlang.org/docs/handbook/dom-manipulation.html)
+  - [CLI Options](https://www.typescriptlang.org/docs/handbook/compiler-options.html#handbook-content)
 - [DOM Documentation](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)
-    - [Element](https://developer.mozilla.org/en-US/docs/Web/API/Element)
-    - [HTMLElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement)
-    - [Event](https://developer.mozilla.org/en-US/docs/Web/API/Event)
-    - [EventTarget](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget)
-    - [Node](https://developer.mozilla.org/en-US/docs/Web/API/Node)
-    - [NodeList](https://developer.mozilla.org/en-US/docs/Web/API/NodeList)
+  - [Element](https://developer.mozilla.org/en-US/docs/Web/API/Element)
+  - [HTMLElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement)
+  - [Event](https://developer.mozilla.org/en-US/docs/Web/API/Event)
+  - [EventTarget](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget)
+  - [Node](https://developer.mozilla.org/en-US/docs/Web/API/Node)
+  - [NodeList](https://developer.mozilla.org/en-US/docs/Web/API/NodeList)

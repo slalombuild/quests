@@ -1,0 +1,18 @@
+{
+    "name": "wandas-wisdom",
+    "description": "This is a vanilla JavaScript application that can easily be transformed into a TypeScript application.",
+    "version": "1.0.0",
+    "scripts": {
+        "build": "webpack --mode production",
+        "serve": "webpack serve --progress --color --mode development",
+        "start": "npm run build; npm run serve"
+    },
+    "author": "Jackson Reeves",
+    "license": "ISC",
+    "devDependencies": {
+        "copy-webpack-plugin": "^11.0.0",
+        "webpack": "^5.82.0",
+        "webpack-cli": "^5.0.1",
+        "webpack-dev-server": "^4.15.0"
+    }
+}
