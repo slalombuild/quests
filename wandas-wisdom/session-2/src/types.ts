@@ -4,6 +4,4 @@ type Quote = {
     tags: string[]
 }
 
-export type {
-    Quote
-}
+export type { Quote }
