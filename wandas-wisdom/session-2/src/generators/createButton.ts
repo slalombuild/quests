@@ -1,9 +1,8 @@
-import buttonText from '../data/buttonText'
 import displayRandomQuote from '../mutators/displayRandomQuote'
 
-function createButton(): HTMLElement {
+function createButton(text: string): HTMLElement {
     const button: HTMLElement = document.createElement('button')
-    button.innerText = buttonText
+    button.innerText = text
     button.addEventListener('click', displayRandomQuote)
 
     return button
