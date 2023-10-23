@@ -2,11 +2,16 @@ import { MouseEventHandler } from '../interfaces'
 
 function createButton(
     text: string,
-    eventHandler: MouseEventHandler
-): HTMLElement {
-    const button: HTMLElement = document.createElement('button')
+    eventHandler?: MouseEventHandler
+): HTMLButtonElement {
+    const button: HTMLButtonElement = document.createElement('button')
     button.innerText = text
-    button.addEventListener('click', eventHandler)
+
+    if (!eventHandler) {
+        button.type = 'submit'
+    } else {
+        button.addEventListener('click', eventHandler)
+    }
 
     return button
 }
