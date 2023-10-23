@@ -6,8 +6,12 @@ interface VoidFunction {
     (...inputs: any): void
 }
 
-interface MouseEventHandler {
-    (event: MouseEvent): void
+interface EventHandler {
+    (event: Event): void
 }
 
-export type { StringFunction, VoidFunction, MouseEventHandler }
+interface BooleanObject {
+    [key: string]: boolean
+}
+
+export type { StringFunction, VoidFunction, EventHandler, BooleanObject }

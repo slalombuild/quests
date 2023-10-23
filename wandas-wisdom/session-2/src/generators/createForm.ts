@@ -1,13 +1,15 @@
+import listAllTags from '../utilities/listAllTags'
 import setValue from '../storage/setValue'
 import createButton from './createButton'
+import { EventHandler } from '../interfaces'
 
 function createForm(): HTMLElement {
     const form: HTMLElement = document.createElement('form')
     const div: HTMLElement = document.createElement('div')
     const select: HTMLSelectElement = document.createElement('select')
     const button: HTMLButtonElement = createButton('Set Topic')
-    const options: string[] = ['hope', 'love']
-    const handleSubmit = (event: Event) => {
+    const options: string[] = listAllTags()
+    const handleSubmit: EventHandler = (event: Event): void => {
         event.preventDefault()
         const selectedOption: string = select.value
         setValue('topic', selectedOption)
