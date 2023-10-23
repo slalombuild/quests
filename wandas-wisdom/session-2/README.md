@@ -1,66 +1,55 @@
-# Wanda's Wisdom: Session 1
+# Wanda's Wisdom: Session 2
 
-In this session, we look at how to convert a simple **JavaScript** web application into **TypeScript** with some basic alterations.
+In this session, we look at how to level up a basic **TypeScript** app with advanced features.
 
 ## Installing and Running the Repo
 
 1. Make sure you have already forked the main repository to your own account and cloned it to your local computer
-2. Within the Slalom Quests directory, enter into this app's folder and the subfolder for the first session: `cd wandas-wisdom/session-1`
+2. Within the Slalom Quests directory, enter into this app's folder and the subfolder for the second session: `cd wandas-wisdom/session-2`
 3. Switch to the start branch: `git checkout start`
 4. Install all Node modules: `npm i`
 5. Start the app: `npm run start`
 
 The last command will build then serve the app by using webpack, allowing you to view it at `http://localhost:8080`. Any changes you make to the code will automatically update the running site. Any errors will be displayed in your terminal.
 
+## Guides for the Session
+
+### Notes
+
+Markdown files walking through the key concepts covered in this session have been provided in the [notes](notes) folder.
+
+### Instructions
+
+Markdown files with steps for how to solve the problem for this session have been provided in the [instructions](instructions) folder.
+
 ## Explaining the Code
 
-A plain JavaScript app could be handled with just three files:
-
-- an _HTML_ file with the structure to display on the site
-- a _CSS_ file with the styling for the site
-- a _JS_ file with all the code for manipulating the site
-
-However, we did not use that structure for this app. We chose to deviate from a vanilla JS app for two reasons:
-
-- to make it easier to _convert_ it to a TypeScript app
-- to make it easier to _introduce_ TypeScript concepts
-
-Let's walk through some of those key deviations before looking more closely at the file structure.
-
-### Helps with Converting to TypeScript
-
-- _Node_: Since TypeScript needs to be installed as a module in a repo in order to use it, we initialized this repo with Node, so we can avoid the hassle of adding a `package.json` afterwards. To convert to TypeScript, we only need to import some additional modules.
-- _webpack_: While TypeScript does not need a webpack in order to run, using that module can make working with a TypeScript app that much easier. TypeScript code needs to be transpiled to JavaScript code before it can be used in a live app. Furthermore, multiple TypeScript files need to be mapped appropriately in order for them to interact appropriately. Finally, it's useful to be able to change the code and instantly be able to see the results live. The webpack allows us to achieve all those benefits without needing to write additional code. The webpack can also handle a simple JS app. To ensure the webpack can handle TypeScript, we only need to add some additional code to the `webpack.config.js` file.
-
-### Helps with Introducing TypeScript
-
-- _multiple files with modules_: Multiple files help you to isolate key functionalities and deal with them piece-wise instead of all at once. Modules allow the functions to interact with one another directly within their JS files instead of needing to interact indirectly after importing all of them separately into the HTML file.
-- _data files with limited content_: While the quotes file helpfully provides an array of quote objects, the other files in the data folder merely provide single strings. This gives you a chance to work with simple data structures in isolation.
-- _utilities files with redundant functionality_: Basic functions may be redundant, but they are also a great way to introduce basic concepts. For instance, you would probably never use a function to convert a string to all caps. For one thing, you already have a built-in JS string method to do that (`.toUpperCase()`). For another, you would probably want to handle that in CSS instead of JS. However, it's good practice for how to write a function that takes a string as an argument and returns a string as the result.
+To work with state, we'll use the browser's native `sessionStorage` object. As a result, we have some helpers to interact with that object.
 
 ### File Structure
 
-- _public_: HTML and CSS files
-- _src_: JS files
-    - _data_: non-functional files with raw data to use in other files (e.g., the `quotes` array)
-    - _utilities_: helper functions (e.g., `makeAllCaps`)
-    - _generators_: functions to create DOM elements (e.g., `createDescription`)
-    - _mutators_: functions to change DOM elements (e.g., `replaceTags`)
+-   _public_: HTML and CSS files
+-   _src_: JS files
+    -   _data_: non-functional files with raw data to use in other files (e.g., the `quotes` array)
+    -   _utilities_: helper functions (e.g., `makeAllCaps`)
+    -   _generators_: functions to create DOM elements (e.g., `createDescription`)
+    -   _mutators_: functions to change DOM elements (e.g., `replaceTags`)
+    -   _storage_: functions to get and set values in session storage (e.g., `getValue`)
 
 If you look in the HTML file, you'll notice two interesting features: it contains an empty `body` tag, and it imports a JS file with a name that doesn't match any of the existing JS files. The body will be filled in by the JS code (specifically, the functions from the generators folder), and the mystery file will be generated by the webpack when the app is run (and stored in a `dist` folder that the webpack will also generate).
 
 ## Resources
 
-- [TypeScript Documentation](https://www.typescriptlang.org/docs/)
-    - [Common Types](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html)
-    - [Object Types](https://www.typescriptlang.org/docs/handbook/2/objects.html)
-    - [Function Types](https://www.typescriptlang.org/docs/handbook/2/functions.html)
-    - [DOM Types](https://www.typescriptlang.org/docs/handbook/dom-manipulation.html)
-    - [CLI Options](https://www.typescriptlang.org/docs/handbook/compiler-options.html#handbook-content)
-- [DOM Documentation](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)
-    - [Element](https://developer.mozilla.org/en-US/docs/Web/API/Element)
-    - [HTMLElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement)
-    - [Event](https://developer.mozilla.org/en-US/docs/Web/API/Event)
-    - [EventTarget](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget)
-    - [Node](https://developer.mozilla.org/en-US/docs/Web/API/Node)
-    - [NodeList](https://developer.mozilla.org/en-US/docs/Web/API/NodeList)
+-   [TypeScript Documentation](https://www.typescriptlang.org/docs/)
+    -   [Common Types](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html)
+    -   [Object Types](https://www.typescriptlang.org/docs/handbook/2/objects.html)
+    -   [Function Types](https://www.typescriptlang.org/docs/handbook/2/functions.html)
+    -   [DOM Types](https://www.typescriptlang.org/docs/handbook/dom-manipulation.html)
+    -   [CLI Options](https://www.typescriptlang.org/docs/handbook/compiler-options.html#handbook-content)
+-   [DOM Documentation](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)
+    -   [Element](https://developer.mozilla.org/en-US/docs/Web/API/Element)
+    -   [HTMLElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement)
+    -   [Event](https://developer.mozilla.org/en-US/docs/Web/API/Event)
+    -   [EventTarget](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget)
+    -   [Node](https://developer.mozilla.org/en-US/docs/Web/API/Node)
+    -   [NodeList](https://developer.mozilla.org/en-US/docs/Web/API/NodeList)

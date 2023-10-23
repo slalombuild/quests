@@ -12,7 +12,10 @@ body {
     color: rgb(229, 213, 229);
 }
 
-h1, section, article, p {
+h1,
+section,
+article,
+p {
     margin: 0;
     padding: 0;
 }
@@ -33,6 +36,19 @@ button {
 }
 
 button:hover {
+    background-color: rgb(225, 176, 225);
+}
+
+form {
+    border: 3px solid rgb(46, 0, 46);
+    border-radius: 3px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+select {
     background-color: rgb(225, 176, 225);
 }
 
@@ -65,7 +81,7 @@ button:hover {
     margin-top: 10px;
 }
 
-#tags > * {
+#tags>* {
     border: 3px solid rgb(143, 0, 143);
     border-radius: 3px;
     padding: 10px;

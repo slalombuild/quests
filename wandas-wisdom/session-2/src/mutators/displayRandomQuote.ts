@@ -8,7 +8,7 @@ import replaceTags from './replaceTags'
 function displayRandomQuote(): void {
     const textArticle: HTMLElement | null = document.getElementById('text')
     const authorP: HTMLElement | null = document.getElementById('author')
-    
+
     if (textArticle && authorP) {
         const oldQuote: string = textArticle.innerText
         const newQuote: Quote = chooseUniqueQuote(oldQuote, quotes)

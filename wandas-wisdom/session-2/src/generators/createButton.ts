@@ -1,10 +1,17 @@
-import buttonText from '../data/buttonText'
-import displayRandomQuote from '../mutators/displayRandomQuote'
+import { MouseEventHandler } from '../interfaces'
 
-function createButton(): HTMLElement {
-    const button: HTMLElement = document.createElement('button')
-    button.innerText = buttonText
-    button.addEventListener('click', displayRandomQuote)
+function createButton(
+    text: string,
+    eventHandler?: MouseEventHandler
+): HTMLButtonElement {
+    const button: HTMLButtonElement = document.createElement('button')
+    button.innerText = text
+
+    if (!eventHandler) {
+        button.type = 'submit'
+    } else {
+        button.addEventListener('click', eventHandler)
+    }
 
     return button
 }
