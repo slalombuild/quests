@@ -7,7 +7,7 @@ function chooseUniqueQuote(oldText: string, allQuotes: Quote[]): Quote {
     const newText: string = newQuote.text
     const isIdentical: boolean = checkIfIdentical(oldText, newText)
 
-    if (!isIdentical) {
+    if (!isIdentical || allQuotes.length === 1) {
         return newQuote
     } else {
         return chooseUniqueQuote(oldText, allQuotes)

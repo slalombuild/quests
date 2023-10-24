@@ -9,6 +9,7 @@ function createForm(): HTMLElement {
     const select: HTMLSelectElement = document.createElement('select')
     const button: HTMLButtonElement = createButton('Set Topic')
     const options: string[] = listAllTags()
+
     const handleSubmit: EventHandler = (event: Event): void => {
         event.preventDefault()
         const selectedOption: string = select.value

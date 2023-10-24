@@ -4,6 +4,7 @@ import createQuoteSection from './generators/createQuoteSection'
 import createDescription from './generators/createDescription'
 import createForm from './generators/createForm'
 import displayRandomQuote from './mutators/displayRandomQuote'
+import setValue from './storage/setValue'
 
 const heading: HTMLElement = createHeading()
 const button: HTMLElement = createButton('Get Quote', displayRandomQuote)
@@ -18,5 +19,7 @@ body.appendChild(button)
 body.appendChild(section)
 body.appendChild(description)
 body.appendChild(form)
+
+setValue('topic', '')
 
 displayRandomQuote()
