@@ -1,7 +1,7 @@
 import description from '../data/description'
 
-function createDescription(): HTMLElement {
-    const p: HTMLElement = document.createElement('p')
+function createDescription(): HTMLParagraphElement {
+    const p: HTMLParagraphElement = document.createElement('p')
     p.innerText = description
 
     return p

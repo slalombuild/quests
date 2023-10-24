@@ -1,8 +1,8 @@
-import { MouseEventHandler } from '../interfaces'
+import { EventHandler } from '../interfaces'
 
 function createButton(
     text: string,
-    eventHandler?: MouseEventHandler
+    eventHandler?: EventHandler
 ): HTMLButtonElement {
     const button: HTMLButtonElement = document.createElement('button')
     button.innerText = text
