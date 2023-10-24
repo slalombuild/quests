@@ -1,7 +1,7 @@
 import title from '../data/title'
 
-function createHeading(): HTMLElement {
-    const h1: HTMLElement = document.createElement('h1')
+function createHeading(): HTMLHeadingElement {
+    const h1: HTMLHeadingElement = document.createElement('h1')
     h1.innerText = title
 
     return h1

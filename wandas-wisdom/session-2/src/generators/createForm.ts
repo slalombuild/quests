@@ -3,9 +3,9 @@ import setValue from '../storage/setValue'
 import createButton from './createButton'
 import { EventHandler } from '../interfaces'
 
-function createForm(): HTMLElement {
-    const form: HTMLElement = document.createElement('form')
-    const div: HTMLElement = document.createElement('div')
+function createForm(): HTMLFormElement {
+    const form: HTMLFormElement = document.createElement('form')
+    const div: HTMLDivElement = document.createElement('div')
     const select: HTMLSelectElement = document.createElement('select')
     const button: HTMLButtonElement = createButton('Set Topic')
     const options: string[] = listAllTags()
