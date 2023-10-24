@@ -1,17 +1,9 @@
-import { EventHandler } from '../interfaces'
+import displayRandomQuote from '../mutators/displayRandomQuote'
 
-function createButton(
-    text: string,
-    eventHandler?: EventHandler
-): HTMLButtonElement {
+function createButton(text: string): HTMLButtonElement {
     const button: HTMLButtonElement = document.createElement('button')
     button.innerText = text
-
-    if (!eventHandler) {
-        button.type = 'submit'
-    } else {
-        button.addEventListener('click', eventHandler)
-    }
+    button.addEventListener('click', displayRandomQuote)
 
     return button
 }

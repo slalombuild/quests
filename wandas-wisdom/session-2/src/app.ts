@@ -7,7 +7,7 @@ import displayRandomQuote from './mutators/displayRandomQuote'
 import setValue from './storage/setValue'
 
 const heading: HTMLElement = createHeading()
-const button: HTMLElement = createButton('Get Quote', displayRandomQuote)
+const button: HTMLElement = createButton('Get Quote')
 const section: HTMLElement = createQuoteSection()
 const description: HTMLElement = createDescription()
 const form: HTMLElement = createForm()
