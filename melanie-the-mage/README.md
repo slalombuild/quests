@@ -43,6 +43,6 @@ Components often need to change what’s on the screen as a result of an interac
 ### Hooks
 Hooks are a special kind of function that is used in react components. Some of them can be used to provide a functional component with stateful elements like useState. Others can be used to manage side effects like useEffect. All hook function begins with the word “use.” **React hook functions can only be used in functional components**. For this exercise we will only be using the **useState** and **useEffect** hooks.
 
-*useState*:
+*useState*: React Hook that allows you to add state to a functional component. t returns an array with two values: the current state and a function to update it. The Hook takes an initial state value as an argument and returns an updated state value whenever the setter function is called.
 
-*useEffect*:
+*useEffect*: The Effect Hook, adds the ability to perform side effects from a function component. It serves the same purpose as componentDidMount , componentDidUpdate , and componentWillUnmount in React classes, but unified into a single API. The best and optimal use of useEffect is to only include the minimal set of values that the effect depends on in the dependency array. This will ensure that the effect is only run when the dependencies change and that the component re-renders optimally.
