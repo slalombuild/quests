@@ -1,7 +1,7 @@
 import Bookshelf from './Components/Bookshelf';
 import style from  './assets/style/stylesheet.module.css';
 
-function App() {
+const App = () => {
   
   return (
     <div className={style.app_container}>
