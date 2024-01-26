@@ -1,0 +1,180 @@
+.app_container {
+  background-color:antiquewhite;
+  width: 239vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.table {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border-spacing: 15px 15px;
+    width: 100%;
+}
+.head {
+  display: flex;
+  flex: 0 0 auto;
+  height: 46px;
+  color: black;
+  padding: 0 5px;
+  font-size: 12px;
+}
+.head_row {
+  display: flex;
+  flex: 1 1 auto;
+  text-transform: uppercase;
+  align-items: center;
+  border-bottom: 1px solid black;
+  font-weight: bold;
+  margin-right: .5rem;
+}
+.head_row_item {
+  display: flex;
+  justify-content: center;
+  flex-flow: wrap;
+  width: 14.8%;
+}
+.body {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  overflow-x: auto;
+  padding: 0 5px;
+}
+.body_container_row {
+  margin-bottom: 5px;
+}
+.body_row {
+  display: flex;
+  min-height: fit-content;
+}
+.body_row_item {
+  display: flex;
+  font-size: 14px;
+  width: 100%;
+  justify-content: center;
+  overflow: visible;
+  text-align: center;
+  margin: 2px 2px 10px 2px;
+}
+.update_button {
+  padding: 5px;
+}
+.edit_button { 
+  background-color: lightblue;
+}
+.delete_button {
+  background-color: lightcoral;
+}
+.book_form {
+  display:flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 1rem;
+  padding-bottom: 9px;
+}
+.bookshelf_container{
+  margin: 5rem;
+}
+.modal_container {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  border-radius: 5px;
+  padding: 2rem;
+  background-color: white;
+  width: 25em;
+}
+.edit_button_group {
+  display: flex;
+  flex-direction: row;
+}
+.edit_submit_button {
+  display: block;
+  margin: auto;
+  font-family: fantasy;
+  background-color:lightcyan;
+}
+.edit_cancel_button {
+  display: block;
+  margin: auto;
+  font-family: fantasy;
+  background-color: lightgray;
+}
+
+.form_group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.form_group input,
+.form_group textarea,
+.form_group select {
+  border: 1px solid black;
+  border-radius: 0.3rem;
+  padding: 0.3rem;
+  font-size: 1rem;
+}
+
+.form_group label {
+  margin-bottom: 0.2rem;
+}
+.head_text {
+  position: relative;
+  opacity: 100%;
+  margin: 1rem;
+}
+.text_on_image {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  background-color: #eedfc2;
+  left: 10%;
+  bottom: 11%;
+  border: 5px black solid;
+  border-style: double;
+}
+.book_row {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+}
+.add_book_submit_button {
+  margin-top: 5px;
+  background-color: black;
+  margin-left: 32px;
+  font-family: fantasy;
+}
+.add_book_title {
+  margin: 1px;
+  align-self: center;
+  font-family: fantasy;
+  padding: 2px 2px 2px 30px;
+}
+.font {
+  font-family: fantasy;
+}
+.sort_button {
+  display: flex;
+  flex-direction: row;
+  background-color: transparent;
+  padding-bottom: 1rem;
+}
+.button_image{
+  margin: 1px;
+}
+.sort_icon {
+  margin-left: 8px;
+}
